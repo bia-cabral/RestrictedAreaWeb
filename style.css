@@ -1,0 +1,11 @@
+/* Tema Claro (padrão) */
+.container.light-theme {
+    background-color: #0feec9;
+    color: #333;
+}
+
+/* Tema Escuro */
+.container.dark-theme {
+    background-color: #ffb700;
+    color: #fff;
+}
