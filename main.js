@@ -1,36 +1,20 @@
-console.log(document.body.classList);
-
-function toggleTheme() {
+document.addEventListener('DOMContentLoaded', () => {
     const container = document.querySelector('.container');
-    container.classList.toggle('dark-theme');
-    container.classList.toggle('light-theme');
-
-    if (container.classList.contains('dark-theme')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
-    }
-}
-
-function loadTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    const container = document.querySelector('.container');
+    const botaoTema = document.getElementById('mudar-tema');
     
-    if (savedTheme === 'dark') {
-        container.body.classList.add('dark-theme');
-        container.body.classList.remove('light-theme');
-
-        console.log(container.body.classList);
+    const temaSalvo = localStorage.getItem('tema');
+    if (temaSalvo) {
+        container.className = `container ${temaSalvo}`;
+    }
+    else {
+        container.className = 'container tema-claro';
+    }
+    
+    botaoTema.addEventListener('click', () => {
+        const temaClaro = container.classList.contains('tema-claro');
+        const novoTema = temaClaro ? 'tema-escuro' : 'tema-claro';
         
-    } else {
-        container.body.classList.remove('dark-theme');
-        container.body.classList.add('light-theme');
-
-        console.log(container.body.classList);
-    }   
-}
-
-const toggleButton = document.getElementById('toggle-theme');
-toggleButton.addEventListener('click', toggleTheme);
-
-loadTheme();
+        container.className = `container ${novoTema}`;
+        localStorage.setItem('tema', novoTema);
+    });
+});
