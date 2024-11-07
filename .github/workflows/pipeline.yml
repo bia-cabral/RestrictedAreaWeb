@@ -1,0 +1,22 @@
+name: Deploy Render Static Site
+
+on:
+  push:
+    branches: [ "PROD" ]
+  pull_request:
+    branches: [ "PROD" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Render
+        uses: johnbeynon/render-deploy-action@v0.0.8
+        with:
+          service-id: ${{ secrets.service_id }}
+          api-key: ${{ secrets.api_key }}
+
