@@ -4,29 +4,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css"></link>
     <script src="main.js" defer></script>
-    <title>Document</title>
+    <link rel="shortcut icon" href="imagens/logo.png" type="image/x-icon">
+    <title>Dashboards</title>
 </head>
 <body>
     <div class="container tema-claro">
         <p class="titulo">Dashboards de BI</p>
         <img src="imagens/temas.png" alt="tema" id="mudar-tema">
         <div class="links-bi">
-                <iframe 
-                    src="https://app.powerbi.com/view?r=eyJrIjoiMGQ4Zjg5OTgtNmM0Yi00MGE2LWI5YzUtZWFiMWViMWY5YTYyIiwidCI6ImIxNDhmMTRjLTIzOTctNDAyYy1hYjZhLTFiNDcxMTE3N2FjMCJ9" 
-                    width="100%" 
-                    height="600" 
-                    frameborder="0" 
-                    allowFullScreen="true">
-                </iframe>
+                <div class="iframe-container" id="simples-container">
+                    <iframe
+                        src="https://app.powerbi.com/view?r=eyJrIjoiMGQ4Zjg5OTgtNmM0Yi00MGE2LWI5YzUtZWFiMWViMWY5YTYyIiwidCI6ImIxNDhmMTRjLTIzOTctNDAyYy1hYjZhLTFiNDcxMTE3N2FjMCJ9"
+                        width="100%"
+                        height="600"
+                        frameborder="0"
+                        allowFullScreen="true"
+                        id="simples">
+                    </iframe>
+                </div>
         
-                <iframe 
-                    src="https://app.powerbi.com/view?r=eyJrIjoiNzJjZGI5YTgtMjIzYi00NDRmLWJjZWUtNzE5ZmVhZmY2OWM4IiwidCI6ImIxNDhmMTRjLTIzOTctNDAyYy1hYjZhLTFiNDcxMTE3N2FjMCJ9" 
-                    width="100%" 
-                    height="600" 
-                    frameborder="0" 
-                    allowFullScreen="true">
-                </iframe>
+                <div class="iframe-container" id="avancado-container">
+                    <iframe
+                        src="https://app.powerbi.com/view?r=eyJrIjoiNzJjZGI5YTgtMjIzYi00NDRmLWJjZWUtNzE5ZmVhZmY2OWM4IiwidCI6ImIxNDhmMTRjLTIzOTctNDAyYy1hYjZhLTFiNDcxMTE3N2FjMCJ9"
+                        width="100%"
+                        height="600"
+                        frameborder="0"
+                        allowFullScreen="true"
+                        id="avancado">
+                    </iframe>
+                </div>
             </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal">&times;</span>
+            <iframe id="modal-iframe" width="100%" height="600" frameborder="0" allowFullScreen="true"></iframe>
+        </div>
     </div>
 </body>
 </html>
