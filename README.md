@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>README - Área Restrita BiMO</title>
 </head>
 <body>
     <h1>Área Restrita - BiMO</h1>
